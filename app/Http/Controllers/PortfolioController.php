@@ -11,21 +11,17 @@ class PortfolioController extends Controller
 {
     public function index()
     {
+        $portfolioConfig = config('portfolio');
+        
         $featuredProjects = Project::where('featured', true)
             ->orderBy('order')
-            ->take(6)
             ->get();
         
-        $skills = Skill::orderBy('category')
-            ->orderBy('order')
-            ->get()
-            ->groupBy('category');
+        $skills = Skill::orderBy('category')->get()->groupBy('category');
         
-        $experiences = Experience::orderBy('start_date', 'desc')
-            ->get()
-            ->groupBy('type');
+        $experiences = Experience::orderBy('start_date', 'desc')->get()->groupBy('type');
 
-        return view('portfolio.index', compact('featuredProjects', 'skills', 'experiences'));
+        return view('portfolio.index', compact('portfolioConfig', 'featuredProjects', 'skills', 'experiences'));
     }
 
     public function projects()

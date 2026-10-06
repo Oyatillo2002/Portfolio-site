@@ -11,88 +11,95 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Skills
+        // --- KO'NIKMALAR (SKILLS) ---
         $skills = [
-            ['name' => 'Laravel', 'category' => 'Backend', 'proficiency' => 90, 'order' => 1],
-            ['name' => 'PHP', 'category' => 'Backend', 'proficiency' => 85, 'order' => 2],
-            ['name' => 'MySQL', 'category' => 'Backend', 'proficiency' => 80, 'order' => 3],
-            ['name' => 'Vue.js', 'category' => 'Frontend', 'proficiency' => 85, 'order' => 1],
-            ['name' => 'JavaScript', 'category' => 'Frontend', 'proficiency' => 90, 'order' => 2],
-            ['name' => 'TailwindCSS', 'category' => 'Frontend', 'proficiency' => 85, 'order' => 3],
-            ['name' => 'HTML/CSS', 'category' => 'Frontend', 'proficiency' => 95, 'order' => 4],
-            ['name' => 'Git', 'category' => 'Tools', 'proficiency' => 85, 'order' => 1],
-            ['name' => 'Docker', 'category' => 'Tools', 'proficiency' => 75, 'order' => 2],
-            ['name' => 'Linux', 'category' => 'Tools', 'proficiency' => 80, 'order' => 3],
+            // Backend
+            ['name' => 'PHP', 'category' => 'Backend', 'proficiency' => 90],
+            ['name' => 'Laravel', 'category' => 'Backend', 'proficiency' => 95],
+            ['name' => 'REST API', 'category' => 'Backend', 'proficiency' => 90],
+            
+            // Database
+            ['name' => 'MySQL', 'category' => 'Database', 'proficiency' => 85],
+            ['name' => 'PostgreSQL', 'category' => 'Database', 'proficiency' => 80],
+            
+            // Frontend & Tools
+            ['name' => 'JavaScript', 'category' => 'Frontend', 'proficiency' => 75],
+            ['name' => 'TailwindCSS', 'category' => 'Frontend', 'proficiency' => 80],
+            ['name' => 'Bootstrap', 'category' => 'Frontend', 'proficiency' => 85],
+            
+            // DevOps & AI
+            ['name' => 'Docker', 'category' => 'DevOps', 'proficiency' => 80],
+            ['name' => 'Nginx', 'category' => 'DevOps', 'proficiency' => 75],
+            ['name' => 'Git & GitHub', 'category' => 'Tools', 'proficiency' => 90],
+            ['name' => 'AI Integration', 'category' => 'AI', 'proficiency' => 85],
         ];
 
         foreach ($skills as $skill) {
-            Skill::create($skill);
+            Skill::updateOrCreate(['name' => $skill['name']], $skill);
         }
 
-        // Projects
+        // --- LOYIHALAR (PROJECTS) ---
         $projects = [
             [
-                'title' => 'E-commerce Platform',
-                'slug' => 'ecommerce-platform',
-                'description' => 'Laravel va Vue.js yordamida yaratilgan to\'liq funksional e-commerce platforma. To\'lov tizimi, admin panel va foydalanuvchi boshqaruvi mavjud.',
-                'technologies' => ['Laravel', 'Vue.js', 'MySQL', 'TailwindCSS'],
+                'title' => 'E-Commerce Backend API',
+                'slug' => 'ecommerce-backend-api',
+                'description' => 'Onlayn do\'kon loyihasining to\'liq backend qismi. 50+ RESTful API endpointlari, murakkab biznes logika va Docker orqali deployment.',
+                'technologies' => ['Laravel', 'REST API', 'MySQL', 'Docker'],
+                'github_url' => 'https://github.com/Oyatillo2002/Ecommerce-backend',
                 'featured' => true,
                 'order' => 1,
             ],
             [
-                'title' => 'Task Management App',
-                'slug' => 'task-management-app',
-                'description' => 'Jamoaviy loyihalar uchun task boshqaruv tizimi. Real-time yangilanishlar, bildirimlar va hisobotlar.',
-                'technologies' => ['Laravel', 'Vue.js', 'WebSocket'],
+                'title' => 'Qayta Aloqa So\'rovlari Tizimi',
+                'slug' => 'feedback-system',
+                'description' => 'Mijozlar uchun onlayn ariza qoldirish tizimi. Rol-based autentifikatsiya (Mijoz/Manager) va admin panel.',
+                'technologies' => ['Laravel', 'MySQL', 'TailwindCSS'],
+                'github_url' => 'https://github.com/Oyatillo2002/laravel-task',
                 'featured' => true,
                 'order' => 2,
             ],
             [
-                'title' => 'Blog Platform',
+                'title' => 'Blog Platformasi',
                 'slug' => 'blog-platform',
-                'description' => 'SEO-optimallashtirilgan blog platformasi. Markdown qo\'llab-quvvatlash, kommentariyalar va ijtimoiy ulashish.',
-                'technologies' => ['Laravel', 'MySQL', 'TailwindCSS'],
+                'description' => 'To\'liq funksional blog. Ro\'yxatdan o\'tish, maqolalar, sharhlar va kontent boshqaruvi.',
+                'technologies' => ['Laravel', 'Bootstrap', 'MySQL'],
+                'github_url' => 'https://github.com/Oyatillo2002/Laravel-blog-site',
                 'featured' => true,
                 'order' => 3,
             ],
         ];
 
         foreach ($projects as $project) {
-            Project::create($project);
+            Project::updateOrCreate(['slug' => $project['slug']], $project);
         }
 
-        // Experiences
+        // --- TAJRIBA VA TA'LIM (EXPERIENCE) ---
         $experiences = [
             [
-                'type' => 'work',
-                'title' => 'Senior Full-Stack Developer',
-                'company' => 'Tech Company LLC',
-                'start_date' => '2023-01-01',
-                'description' => 'Laravel va Vue.js yordamida yirik loyihalarni ishlab chiqish. Jamoa boshqaruvi va mentorlik.',
-                'order' => 1,
-            ],
-            [
-                'type' => 'work',
-                'title' => 'Full-Stack Developer',
-                'company' => 'Digital Agency',
-                'start_date' => '2021-06-01',
-                'end_date' => '2022-12-31',
-                'description' => 'Mijozlar uchun web ilovalar yaratish. Backend va frontend ishlab chiqish.',
-                'order' => 2,
-            ],
-            [
                 'type' => 'education',
-                'title' => 'Kompyuter Fanlari Bakalavri',
-                'company' => 'Toshkent Davlat Texnika Universiteti',
-                'start_date' => '2017-09-01',
-                'end_date' => '2021-06-30',
-                'description' => 'Dasturlash, ma\'lumotlar bazasi va web texnologiyalar',
+                'title' => 'Muhandis-dasturchi (Informatika)',
+                'company' => 'Namangan Davlat Universiteti',
+                'start_date' => '2020-09-01',
+                'end_date' => '2024-06-30',
+                'description' => 'Bakalavr darajasi. Dasturlash algoritmlari va ma\'lumotlar tuzilmasi.',
                 'order' => 1,
+            ],
+            // Agar ish tajribangiz bo'lsa, shu yerga qo'shasiz. Hozircha "Freelance" yoki "Pet Projects" deb qoldirish mumkin
+            [
+                'type' => 'work',
+                'title' => 'Backend Developer (Pet Projects & Freelance)',
+                'company' => 'Mustaqil Faoliyat',
+                'start_date' => '2023-01-01',
+                'description' => 'Laravel ekotizimida turli xil web ilovalar va API lar yaratish. Docker va CI/CD jarayonlarini o\'rganish va tatbiq etish.',
+                'order' => 2,
             ],
         ];
 
         foreach ($experiences as $exp) {
-            Experience::create($exp);
+            Experience::updateOrCreate([
+                'title' => $exp['title'], 
+                'company' => $exp['company']
+            ], $exp);
         }
     }
 }

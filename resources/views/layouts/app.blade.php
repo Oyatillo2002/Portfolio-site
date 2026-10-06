@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Full-Stack Developer Portfolio">
-    <title>@yield('title', 'Portfolio') - Ismingiz</title>
+    <title>@yield('title', 'Portfolio') - Oyatillo</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -18,7 +18,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="/" class="text-2xl font-bold text-primary">
-                    &lt;Ismingiz /&gt;
+                    &lt;Oyatillo /&gt;
                 </a>
 
                 <div class="hidden md:flex space-x-8">
@@ -54,37 +54,37 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">&lt;Ismingiz /&gt;</h3>
-                    <p class="text-gray-400">Full-Stack Developer</p>
+                    <h3 class="text-xl font-bold mb-4">&lt;Oyatillo /&gt;</h3>
+                    <p class="text-gray-400">Backend Developer</p>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Bog'lanish</h4>
                     <p class="text-gray-400">
                         <i class="fas fa-envelope mr-2"></i>
-                        email@example.com
+                        xabibullayev097@gmail.com
                     </p>
                     <p class="text-gray-400 mt-2">
                         <i class="fas fa-phone mr-2"></i>
-                        +998 90 123 45 67
+                        +998 77 838 48 02
                     </p>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Ijtimoiy tarmoqlar</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-primary text-2xl">
+                        <a href="https://github.com/Oyatillo2002?tab=repositories" class="text-gray-400 hover:text-primary text-2xl">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-primary text-2xl">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-primary text-2xl">
+                        <a href="https://t.me/Oyatill0" class="text-gray-400 hover:text-primary text-2xl">
                             <i class="fab fa-telegram"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; {{ date('Y') }} Ismingiz. Barcha huquqlar himoyalangan.</p>
+                <p>&copy; {{ date('Y') }} Oyatillo. Barcha huquqlar himoyalangan.</p>
             </div>
         </div>
     </footer>
