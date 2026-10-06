@@ -24,7 +24,7 @@
                         <i class="fas fa-code mr-2"></i>Loyihalarim
                     </a>
                     <!-- Resume PDF ni public papkasiga 'resume.pdf' nomi bilan qo'ygan bo'lishingiz kerak -->
-                    <a href="{{ asset('resume.pdf') }}" download class="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md">
+                    <a href="{{ asset('Oyatillo_Xabibullayev_Resume.pdf') }}" download class="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md">
                         <i class="fas fa-download mr-2"></i>CV Yuklash
                     </a>
                 </div>
@@ -52,7 +52,7 @@
                 <div class="relative">
                     <div class="absolute inset-0 bg-blue-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
                     <!-- O'z rasmingizni public/img/profile.jpg ga qo'ying -->
-                    <img src="{{ asset('img/profile.jpg') }}" alt="{{ $portfolioConfig['name'] }}" 
+                    <img src="{{ asset('img/High-Agency.jpg') }}" alt="{{ $portfolioConfig['name'] }}" 
                          class="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-full border-8 border-white shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
